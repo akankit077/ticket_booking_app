@@ -52,7 +52,7 @@ We can use two methods of getting the analytics. One is by **DB Aggregation** an
 #### Profit between two dates
 
 ```http
-  POST /analytics/profit
+  GET /analytics/profit
 ```
 This API will return the details of the money that was earned by movie between 2 dates with division by months. 
 
@@ -67,7 +67,7 @@ This API will return the details of the money that was earned by movie between 2
 #### Visitors between two dates
 
 ```http
-  POST /analytics/visitors
+  GET /analytics/visitors
 ```
 This API will return the number of visitors that visits the movie hall to watch the movie between 2 dates with division by months. 
 
