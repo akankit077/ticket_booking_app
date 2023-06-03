@@ -1,9 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { Booking } from 'src/models/booking.entity';
-import { Movie } from 'src/models/movie.entity';
-import { Screen } from 'src/models/screen.entity';
-import { Showtime } from 'src/models/showtime.entity';
-import { Theater } from 'src/models/theater.entity';
+import { Ticket } from 'src/models/ticket.entity';
 import { User } from 'src/models/user.entity';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -47,7 +43,7 @@ class ConfigService {
       username: this.getValue('POSTGRES_USER'),
       password: this.getValue('POSTGRES_PASSWORD'),
       database: this.getValue('POSTGRES_DATABASE'),
-      entities: [User, Booking, Movie, Screen, Showtime, Theater],
+      entities: [User, Ticket],
       synchronize: true,
       ssl: true,
     };

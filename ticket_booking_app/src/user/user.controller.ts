@@ -29,6 +29,7 @@ export class UserController {
     return this.userService.findAll(page, limit);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('/:userId')
   async getUser(@Param('userId', ParseIntPipe) userId: number) {
     const user = await this.userService.findOne(userId);
@@ -38,11 +39,13 @@ export class UserController {
     return user;
   }
 
+  @UseGuards(JwtAuthGuard)
   @Post()
   async createUser(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Patch('/:userId')
   async updateUser(
     @Body() updateUserRequestDto: UpdateUserRequestDto,
@@ -51,6 +54,7 @@ export class UserController {
     return this.userService.update(updateUserRequestDto, userId);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete('/:userId')
   async deleteUser(@Param('userId', ParseIntPipe) userId: number) {
     return this.userService.delete(userId);

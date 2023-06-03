@@ -1,24 +1,29 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { User } from './user.entity';
-import { Showtime } from './showtime.entity';
 
 @Entity()
-export class Booking {
+export class Ticket {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  numSeats: number;
+  movieTitle: string;
+
+  @Column()
+  movieTime: Date;
+
+  @Column()
+  ticketPrice: number;
+
+  @Column()
+  numOfSeats: number;
 
   @Column()
   totalPrice: number;
 
   @Column()
-  bookingTime: Date;
+  creationDate: Date;
 
-  @ManyToOne(() => User, (user) => user.bookings)
+  @ManyToOne(() => User, (user) => user.tickets)
   user: User;
-
-  @ManyToOne(() => Showtime, (showtime) => showtime.bookings)
-  showtime: Showtime;
 }
