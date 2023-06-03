@@ -2,6 +2,7 @@
 # Ticket Booking App
 
 This is a backend API server application for a movie ticket booking application. I have used passport and jwt based authentication techniques. It has some APIs for analytics also.
+The Database used is PostgreSQL. Database is hosted on render.com
 
 
 ## Run Locally
