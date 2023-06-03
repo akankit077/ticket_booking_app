@@ -1,9 +1,9 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { Ticket } from 'src/models/ticket.entity';
 import { User } from 'src/models/user.entity';
+import * as dotenv from 'dotenv';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-require('dotenv').config();
+dotenv.config();
 
 class ConfigService {
   constructor(private env: { [k: string]: string | undefined }) {}

@@ -9,25 +9,11 @@ services:
     ports:
       - 3000:3000
     environment:
-      - POSTGRES_HOST=db
+      - POSTGRES_HOST=dpg-chsdqmu7avjdbih7tnv0-a.singapore-postgres.render.com
       - POSTGRES_PORT=5432
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=mydb
-    depends_on:
-      - db
+      - POSTGRES_USER=ankit
+      - POSTGRES_PASSWORD=kmJlGzKvAUdJJ6jCwrbwpqwEiFY3wdSN
+      - POSTGRES_DB=movie_ticket
     volumes:
       - ./ticket_booking_app:/ticket_booking_app
 
-  db:
-    image: postgres:15
-    restart: unless-stopped
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=mydb
-    volumes:
-      - ./postgres-data:/var/lib/postgresql/data
-
-volumes:
-  postgres-data:

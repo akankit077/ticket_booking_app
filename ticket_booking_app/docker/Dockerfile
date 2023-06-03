@@ -4,6 +4,7 @@ WORKDIR /ticket_booking_app
 
 COPY package*.json ./
 
+RUN npm install --save dotenv
 RUN npm install
 
 COPY . .
